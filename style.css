@@ -1,100 +1,120 @@
-CSS midterms fix
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Oswald", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding-left: 300px;
-    background-color: #D9DDDC ;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar {
-    height: 100%;
-    width: 260px;
-    position: fixed; 
-    z-index: 1; 
-    top: 0; 
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: #C5C6C7; 
-    overflow-x: hidden; 
-    padding-top: 20px;
-    border: 2px solid #555;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
 }
 
 .sidebar h1 {
-    text-align: center;
-}
-
-.sidebar p {
-    text-align: center;
-}
-
-.sidebar p a {
-    text-align: center;
-    color: blue;
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
-}
-  
-.sidebar li {
-    border-top: 1px solid #555;
-    border-bottom: 1px solid #555;
-    padding: 20px 20px 20px 20px;
-    
+    padding-left: 0;
 }
 
 .sidebar a {
-    color: inherit;
+    color: #fff;
     text-decoration: none;
+    display: block;
+    padding: 10px 0;
 }
 
+.sidebar p {
+    font-size: 0.9em;
+    margin-top: 20px;
+}
 .sidebar li:hover {
     background-color: #3E424B;
     font-size: 18px;
     transition-duration: 0.5s;
 }
-
-h1 {
-    font-size: 2em;
-    margin-top: 20px;
+.HTML {
+    margin-left: 270px;
+    padding: 20px;
+    overflow-x: auto;
 }
-
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
 th, td {
-padding: 10;
-text-align: left;
-border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-img,video,iframe{
-    max-width: 100%;
-    height: auto;
+
+@media (min-width: 480px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .HTML {
+        margin-left: 270px;
+    }
+
+    .HTML table {
+        overflow-x: auto;
+    }
 }
 
-ol, ul {
-    padding-left: 20px;
-}
+@media (max-width: 480px) {
+    
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        max-height: 150px;
+    }
 
-pre {
-white-space: pre-wrap;
-font-family: monospace;
+    .HTML {
+        margin-left: 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .HTML {
+        overflow-x: scroll;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
 }
